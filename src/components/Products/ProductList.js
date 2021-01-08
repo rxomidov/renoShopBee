@@ -20,7 +20,7 @@ export default function ProductList({title, parag, products}) {
 }
 
 const FeaturedWrapper = styled.section`
-  padding: 02rem;
+  padding-bottom: 4rem;
   .section-header{
     font-family: Poppins;
     font-weight:bold;
