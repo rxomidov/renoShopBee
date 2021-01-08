@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300.002" height="29.651" viewBox="0 0 172 17">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 24px;
+      }
+
+      .cls-2 {
+        fill: #3cb878;
+        font-family: Poppins;
+        text-transform: uppercase;
+      }
+
+      .cls-3 {
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <text id="Renoshopbee" class="cls-1" x="-1" y="17"><tspan class="cls-2">Renoshop</tspan><tspan class="cls-3">bee</tspan></text>
+</svg>

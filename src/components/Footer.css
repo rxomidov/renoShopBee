@@ -1,0 +1,10 @@
+.footer{
+    background: #ffffff;
+}
+.footer-top {
+    border-bottom: 1px solid lightgray;
+}
+.footer-bottom{
+    background: #000;
+    color: #fff;
+}
