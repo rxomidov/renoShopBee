@@ -22,6 +22,7 @@ export default function ProductList({title, parag, products}) {
 const FeaturedWrapper = styled.section`
   padding-bottom: 4rem;
   .section-header{
+    margin-top: 4rem;
     font-family: Poppins;
     font-weight:bold;
     text-transform:uppercase;
@@ -29,5 +30,6 @@ const FeaturedWrapper = styled.section`
   .section-parag{
     font-style: italic;
     color:#3cb878;
+    margin-bottom: 2rem;
   }
 `

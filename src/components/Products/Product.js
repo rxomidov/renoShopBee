@@ -29,7 +29,6 @@ export default function Product({fields, sys}) {
                         <img src={productRating} alt="product rating"/>
                     </div>
                 </div>
-
             </ProductWrapper>
         </div>
     );
@@ -43,6 +42,7 @@ const ProductWrapper = styled.div`
     font-weight:bold;
     transition:0.3s;
     position:relative;
+    margin-bottom: 2rem;
     
     :hover{
       background:#efefef;

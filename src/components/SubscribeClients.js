@@ -21,7 +21,8 @@ export default function SubscribeClients(props) {
                     <div className="subscribe text-center">
                         <h3>Get Out Special Discount</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Corporis cupiditate illum nemo neque possimus, similique!
+                            Aliquam beatae debitis eveniet impedit repellat similique veniam.
+                            Eos fugit, sapiente? Praesentium.
                         </p>
                         <form onSubmit={handleSubmit}>
                             <input className="subscribe-input" type="email" placeholder="Email Address"/>
@@ -130,6 +131,6 @@ const SubscibeClientsWrapper = styled.section`
     }
     .subscribe-input{  
         width: 200px;
-      }
+     }
   }
 `
