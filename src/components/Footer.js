@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FaFacebookF, FaInstagram, FaLinkedin, FaTelegram, FaTwitter,
-    FaCcPaypal, FaCcVisa, FaAmazonPay, FaCcMastercard, FaCcAmex
+    FaCcPaypal, FaCcVisa, FaCcAmazonPay, FaCcMastercard, FaCcAmex
 } from "react-icons/all";
 import './Footer.css';
 
@@ -15,7 +15,7 @@ export default function Footer(props) {
 
     const [fbicons] = useState([
         {id: 1, icon: <FaCcPaypal/>, link: "https://instagram.com"},
-        {id: 2, icon: <FaAmazonPay/>, link: "https://twitter.com"},
+        {id: 2, icon: <FaCcAmazonPay/>, link: "https://twitter.com"},
         {id: 3, icon: <FaCcVisa/>, link: "https://telegram.org"},
         {id: 4, icon: <FaCcMastercard/>, link: "https://facebook.com"},
         {id: 5, icon: <FaCcAmex/>, link: "https://linkedin.com"},
@@ -78,17 +78,19 @@ export default function Footer(props) {
                 </div>
             </div>
             <div className="footer-bottom">
-                <div className="row">
-                    <div className="col-md-8">
-                        <div className="copyright">
-                            Copyright {new Date().getFullYear()} RenoshopBee all right reserved  -  Design by RX
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-8">
+                            <div className="copyright">
+                                Copyright {new Date().getFullYear()} RenoshopBee all right reserved  -  Design by RX
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="footer-bottom-icons">
-                            {fbicons.map(icon => (
-                                <a key={icon.id} href={icon.link}>{icon.icon}</a>
-                            ))}
+                        <div className="col-md-4">
+                            <div className="footer-bottom-icons">
+                                {fbicons.map(icon => (
+                                    <a key={icon.id} href={icon.link}>{icon.icon}</a>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

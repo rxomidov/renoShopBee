@@ -8,3 +8,17 @@
     background: #000;
     color: #fff;
 }
+.copyright{
+    padding: 0.5rem;
+}
+.footer-bottom-icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+}
+.footer-bottom-icons a{
+    color: #fff;transition: 0.3s;
+}
+.footer-bottom-icons a:hover{
+    color: #3cb878;
+}

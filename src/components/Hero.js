@@ -31,6 +31,7 @@ export default function Hero({children, slides}) {
                         {index === current && (
                             <div className="banner">
                                 <img className="hero-image" src={slide.image} alt="alt"/>
+                                <div className="hero-image-after"></div>
                                 <div className="row">
                                     <div className="col-md-6">
                                         <h1>{slide.title}<br/><span>{slide.subtitle}</span></h1>
