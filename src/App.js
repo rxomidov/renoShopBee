@@ -6,6 +6,9 @@ import Home from "./pages/Home";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Footer from "./components/Footer";
 import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
+import Cart from "./pages/Cart";
+import Error from "./pages/Error";
 
 export default function App() {
     return <Router>
@@ -16,6 +19,15 @@ export default function App() {
             </Route>
             <Route exact path="/products">
                 <Products/>
+            </Route>
+            <Route path="/products/:id">
+                <ProductDetails/>
+            </Route>
+            <Route path="/cart">
+                <Cart/>
+            </Route>
+            <Route path="*">
+                <Error/>
             </Route>
         </Switch>
         <Footer/>
