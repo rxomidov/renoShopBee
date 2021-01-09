@@ -1,17 +1,20 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import {useParams} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
-import {ProductContext} from "../context/context";
+import {ProductContext} from "../context/product";
 import Loading from "../components/Loading";
 import styled from "styled-components";
 import productRating from '../assets/productRating.png';
-import {FaCartPlus, FaChevronLeft, FaRegHeart, FaRecycle} from "react-icons/all";
+import {FaCartPlus, FaChevronLeft, FaRegHeart, FaHeart, FaRecycle} from "react-icons/all";
 
 export default function ProductDetails(props) {
     const {id} = useParams();
     const history = useHistory();
     //console.log(id)
-    const {products} = React.useContext(ProductContext);
+    const {products} = useContext(ProductContext);
+    const [quantity, setQuantity] = useState(1);
+    const [liked, setLiked] = useState(false);
+
     const product = products.find(product => product.sys.id === id)
     console.log(product);
 
@@ -20,6 +23,18 @@ export default function ProductDetails(props) {
     }
     const {fields} = product;
     let url = fields.image.fields.file.url;
+
+    const minusQuantity = () => {
+        if (quantity === 1) {
+            setQuantity(quantity)
+        } else setQuantity(quantity - 1)
+    };
+    const plusQuantity = () => {
+        setQuantity(quantity + 1)
+    };
+    const handleLike = () => {
+        setLiked(!liked)
+    };
 
     return (
         <ProductWrapper>
@@ -54,15 +69,23 @@ export default function ProductDetails(props) {
                             <div className="product-color">
                                 <select name="productColor" id="product">
                                     <option value="">Select Color</option>
-                                    <option value="white">white</option>
-                                    <option value="black">black</option>
+                                    <option value="white">
+                                        white
+                                    </option>
+                                    <option value="black">
+                                        black
+                                    </option>
                                 </select>
                             </div>
                         </div>
                         <div className="product-quantity">
-                            <button className="btn btn-minus">-</button>
-                            <div className="quantity">3</div>
-                            <button className="btn btn-plus">+</button>
+                            <button onClick={minusQuantity}
+                                    className="btn btn-minus">-
+                            </button>
+                            <div className="quantity">{quantity}</div>
+                            <button onClick={plusQuantity}
+                                    className="btn btn-plus">+
+                            </button>
                         </div>
                         <div className="product-buttons">
                             <button
@@ -71,7 +94,7 @@ export default function ProductDetails(props) {
                                     //addToCart(product);
                                     history.push('/cart')
                                 }}
-                            >   <FaCartPlus/>
+                            ><FaCartPlus/>
                                 add to cart
                             </button>
                             <button
@@ -80,7 +103,7 @@ export default function ProductDetails(props) {
                                     //addToCart(product);
                                     history.push('/products')
                                 }}
-                            >   <FaChevronLeft/>
+                            ><FaChevronLeft/>
                                 <div>
                                     back to products
                                 </div>
@@ -88,11 +111,12 @@ export default function ProductDetails(props) {
                             <button
                                 className="btn btn-icon"
                                 onClick={() => {
+                                    handleLike()
                                     //addToCart(product);
                                     //history.push('/products')
                                 }}
                             >
-                                <FaRegHeart/>
+                                {liked ? (<FaHeart/>) : <FaRegHeart/>}
                             </button>
                             <button
                                 className="btn btn-icon"
@@ -129,6 +153,12 @@ const ProductWrapper = styled.section`
         border: 1px solid lavender;
         margin: 1rem 0;
         width: 100%;
+        text-transform:capitalize;
+        
+        option{
+          text-transform:capitalize;
+          //background:#000;
+        }
       }
     }
   }
@@ -189,6 +219,8 @@ const ProductWrapper = styled.section`
     }
     .quantity{
       width: 20%;
+      display: flex;
+      justify-content:center;
     }
     
     @media screen and (max-width: 768px){

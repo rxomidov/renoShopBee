@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ProductProvider from "./context/context";
+import ProductProvider from "./context/product";
+import {CartProvider} from "./context/cart";
 
 ReactDOM.render(
-    <ProductProvider>
-        <App/>
-    </ProductProvider>,
+    <CartProvider>
+        <ProductProvider>
+            <App/>
+        </ProductProvider>
+    </CartProvider>,
     document.getElementById('root')
 );
 

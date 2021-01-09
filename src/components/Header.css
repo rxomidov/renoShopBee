@@ -52,6 +52,9 @@
 .header-top-left div{
     font-size: 12px;
     padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .header-top-left div:first-child{
     border-right: 1px solid #555555;
@@ -119,7 +122,7 @@
         padding: 0 0.5rem;
     }
     .header-top-phone, .header-top-email{
-        display: none;
+        display: none!important;
     }
 }
 @media screen and (max-width: 992px){

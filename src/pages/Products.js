@@ -1,5 +1,5 @@
 import React from 'react';
-import {ProductContext} from "../context/context";
+import {ProductContext} from "../context/product";
 import Loading from "../components/Loading";
 import ProductList from "../components/Products/ProductList";
 
