@@ -22,11 +22,15 @@ export default function Header(props) {
                 <div className="header-top-left">
                     <div>
                         <FaPhoneAlt/>
-                        +998 99 992 2817
+                        <div className="header-top-phone">
+                            +998 99 992 28 17
+                        </div>
                     </div>
                     <div>
                         <FaEnvelope/>
-                        rixsitilloxomidov@gmail.com
+                        <div className="header-top-email">
+                            rixsitilloxomidov@gmail.com
+                        </div>
                     </div>
                 </div>
                 <div className="header-top-right">

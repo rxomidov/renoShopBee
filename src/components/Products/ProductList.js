@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Product from "./Product";
 
 export default function ProductList({title, parag, products}) {
-    console.log(products)
+    console.log(products);
     return (
         <FeaturedWrapper>
             <div className="container text-center">

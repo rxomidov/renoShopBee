@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 export default function Product({fields, sys}) {
     return (
-        <div className="col-md-3 col-sm-6">
+        <div className="col-lg-3 col-md-4 col-sm-6">
             <ProductWrapper>
                 <div className="product-card">
                     <div className="product-card-img">
@@ -62,6 +62,7 @@ const ProductWrapper = styled.div`
       transition: 0.3s;
       :hover{
         transform: scale(1.1);
+        filter: brightness(0.5);
       }
     }
   }

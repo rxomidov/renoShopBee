@@ -34,7 +34,7 @@
     width: 150px;
     min-width: 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     list-style: none;
 }
 .header-top{
@@ -76,11 +76,13 @@
     filter: brightness(0.7);
 }
 .top-search-input{
-    width: 100%;
+    width: 10%;
     border-radius: 1rem;
     border: 1px solid lightgray;
     padding: 3px 1rem;
     font-size: 12px;
+    opacity: 0;
+    transition: 0.3s;
 }
 .top-search{
     position: relative;
@@ -90,6 +92,10 @@
     top: 8px;
     right: 8px;
     font-size: 12px;
+}
+.top-search:hover .top-search-input{
+    opacity: 1;
+    width: 100%;
 }
 .top-cart {
     text-decoration: none;
@@ -105,6 +111,20 @@
 @media screen and (max-width: 768px){
     .header-middle-links{
         display: none!important;
+    }
+    .header{
+        overflow-x: hidden;
+    }
+    .header-top-left div{
+        padding: 0 0.5rem;
+    }
+    .header-top-phone, .header-top-email{
+        display: none;
+    }
+}
+@media screen and (max-width: 992px){
+    .header-middle-links{
+        width: 400px;
     }
     .header{
         overflow-x: hidden;
