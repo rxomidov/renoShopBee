@@ -59,18 +59,17 @@ export function CartProvider({children}) {
     const addToCart = product =>{
         //console.log(product);
         const {id}=product.sys;
-        const {image}=product.fields.image.fields.file;
+        const {url}=product.fields.image.fields.file;
         const {title,price}=product.fields;
-        console.log(id);
         const item = [...cart].find(item=>item.id===id);
-        // console.log(item.id);
-        // if(item){
-        //      increaseAmount(id)
-        // }else {
-        //     const newItem={id,image,title,price,amount:1};
-        //     const newCart=[...cart,newItem];
-        //     setCart(newCart);
-        // }
+        console.log(url);
+        if(item){
+             increaseAmount(id)
+        }else {
+            const newItem={id,image:url,title,price,amount:1};
+            const newCart=[...cart,newItem];
+            setCart(newCart);
+        }
     };
 
     const clearCart = () =>{

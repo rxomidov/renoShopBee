@@ -13,14 +13,14 @@ export default function CartItem({id, title, price, image, amount}) {
                 <div className="row no-gutters">
                     <div className="col-md-4">
                         <div className="products">
-                            <div className="row">
+                            <div className="row no-gutters">
                                 <div className="col-md-4">
                                     <div className="product-name noboreder">
                                         <img src={image} alt="image"/>
                                     </div>
                                 </div>
                                 <div className="col-md-8">
-                                    <div className="product-name">
+                                    <div className="product-name font-weight-bold">
                                         {title}
                                     </div>
                                 </div>
@@ -37,22 +37,24 @@ export default function CartItem({id, title, price, image, amount}) {
                             <div className="col-md-3">
                                 {/*Quantity*/}
                                 <div className="product-name">
-                                    <button
-                                        onClick={() => decreaseAmount(id)}>-
-                                    </button>
-                                    {amount}
-                                    <button
-                                        onClick={() => increaseAmount(id)}>+
-                                    </button>
+                                    <div className="product-quantity">
+                                        <button className="btn btn-minus"
+                                                onClick={() => decreaseAmount(id)}>-
+                                        </button>
+                                        <div className="quantity">{amount}</div>
+                                        <button className="btn btn-plus"
+                                                onClick={() => increaseAmount(id)}>+
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-md-3">
-                                <div className="product-name">
+                                <div className="product-name font-weight-bold text-success">
                                     $ {price}
                                 </div>
                             </div>
                             <div className="col-md-3">
-                                <div className="product-name">
+                                <div className="product-name pb2rem font-weight-bold text-primary">
                                     <div>
                                         $ {amount * price}
                                         <button className="btn btn-outline-danger"
@@ -72,6 +74,27 @@ export default function CartItem({id, title, price, image, amount}) {
 
 const CartItemWrapper = styled.div`
    
+   .product-quantity{
+    height: 3rem;
+    padding: 0 0.5rem!important;
+    
+    .btn-minus, .btn-plus{
+      border: 1px solid lavender;
+      border-radius: 0;
+      font-weight:bold;
+      height: 100%;
+      padding: 0 1rem;
+      width: 3rem;
+   }
+   .quantity{
+        display: flex;
+        justify-content:center;
+        border-bottom: 1px solid lavender;
+        border-top: 1px solid lavender;
+        height: 100%;
+        padding: 0 1rem;
+       }
+   }
   .cart-topp{
     //padding: 1rem;
     border-bottom: 1px solid lavender;
@@ -83,12 +106,16 @@ const CartItemWrapper = styled.div`
       border-left: 1px solid lavender;
   }
   .product-name{
-      height: 6rem;
+      height: 8rem;
       display:flex;
       align-items: center;
       justify-content:center;
+      text-transform:capitalize;
       border-right: 1px solid lavender;
-        
+      
+      img{
+        padding: 1rem;
+      }
       div{
         width: 100%;
         padding: 0 2rem;
@@ -103,6 +130,26 @@ const CartItemWrapper = styled.div`
   .products{
     img{
       width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 768px){
+    .product-name{
+      height: inherit;
+      padding: 0.5rem 0;
+      border: none;
+      
+      div{
+        justify-content:space-around;
+      }
+    }
+    .pb2rem{
+      padding-bottom: 2rem;
+    }
+    .products{
+      img{
+        width: 60%;
+      } 
     }
   }
 `

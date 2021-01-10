@@ -23,8 +23,8 @@ export default function ProductDetails(props) {
     if (!products) {
         return <Loading/>
     }
-    const {fields} = product;
-    let url = fields.image.fields.file.url;
+    const {title, price, description} = product.fields;
+    const {url} = product.fields.image.fields.file;
 
     const minusQuantity = () => {
         if (quantity === 1) {
@@ -49,16 +49,16 @@ export default function ProductDetails(props) {
                     </div>
                     <div className="col-md-7">
                         <h3 className="product-title">
-                            {fields.title}
+                            {title}
                         </h3>
                         <div>
                             <h4 className="product-price">
-                                {fields.price}
+                                {price}
                             </h4>
                             <img src={productRating} alt=""/>
                         </div>
                         <p className="product-description">
-                            {fields.description}
+                            {description}
                         </p>
                         <div className="product-details">
                             <div className="product-size">

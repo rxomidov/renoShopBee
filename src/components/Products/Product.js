@@ -113,4 +113,10 @@ const ProductWrapper = styled.div`
     font-size: 12px;
     color:#3cb878;
   }
+  @media screen and (max-width: 768px){
+    .product-card{
+      width: 80%;
+      margin: 0 auto 2rem;
+    }
+  }
 `
