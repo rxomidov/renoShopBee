@@ -2,9 +2,11 @@ import React, {useContext} from 'react';
 import {CartContext} from "../context/cart";
 import CartItem from "../components/Cart/CartItem";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 export default function Cart(props) {
-    const {cart} = useContext(CartContext);
+    let user = false;
+    const {cart, total} = useContext(CartContext);
     console.log(cart);
 
     if (cart.length === 0){
@@ -14,19 +16,19 @@ export default function Cart(props) {
     }
     return (
         <CartWrapper>
-            <div className="container">
+            <div className="container text-center">
                 <h1>Your Cart</h1>
                 <div className="cart-top">
-                    <div className="row">
+                    <div className="row no-gutters">
                         <div className="col-md-4">
                             <div className="products">
                                 Products
                             </div>
                         </div>
                         <div className="col-md-8">
-                            <div className="row">
+                            <div className="row no-gutters">
                                 <div className="col-md-3">
-                                    Color&Size
+                                    Color & Size
                                 </div>
                                 <div className="col-md-3">
                                     Quantity
@@ -42,8 +44,17 @@ export default function Cart(props) {
                     </div>
                 </div>
                 {cart.map(item => (
-                    <CartItem key={item.sys.id} {...item}/>
+                    <CartItem key={item.id} {...item}/>
                 ))}
+                <h2>total : $ {total}</h2>
+                {user ?
+                    <Link to="/checkout" className="btn btn-primary btn-block">
+                        checkout
+                    </Link> :
+                    <Link to="/login" className="btn btn-primary btn-block">
+                        login
+                    </Link>
+                }
             </div>
         </CartWrapper>
     );

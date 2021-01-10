@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react';
 import {useParams} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import {ProductContext} from "../context/product";
+import {CartContext} from "../context/cart";
 import Loading from "../components/Loading";
 import styled from "styled-components";
 import productRating from '../assets/productRating.png';
@@ -12,6 +13,7 @@ export default function ProductDetails(props) {
     const history = useHistory();
     //console.log(id)
     const {products} = useContext(ProductContext);
+    const {addToCart} = React.useContext(CartContext);
     const [quantity, setQuantity] = useState(1);
     const [liked, setLiked] = useState(false);
 
@@ -91,7 +93,7 @@ export default function ProductDetails(props) {
                             <button
                                 className="btn btn-add"
                                 onClick={() => {
-                                    //addToCart(product);
+                                    addToCart(product);
                                     history.push('/cart')
                                 }}
                             ><FaCartPlus/>

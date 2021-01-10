@@ -1,42 +1,26 @@
 export const productData = [
   {
-    sys: { id: 0 },
-    fields: {
-      title: "google pixel - black",
-      price: 10,
-      company: "google",
-      description:
-        "Shaman hexagon fam activated charcoal literally cardigan. Pitchfork YOLO man bun hella. Trust fund vexillologist squid put a bird on it man braid, selvage pug. Schlitz kombucha chillwave pug shabby chic cornhole. Try-hard four loko listicle yuccie kitsch small batch narwhal celiac selfies distillery cloud bread farm-to-table art party leggings glossier.",
-      featured: true,
-      image: { fields: { file: { url: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1574719863/iorxuhfensblqhn6jy5d.png" } } }
-    }
+    id: 1,
+    title: "mac vintage computer",
+    price: 200.99,
+    image:
+        "https://res.cloudinary.com/diqqf3eq2/image/upload/v1574719863/iorxuhfensblqhn6jy5d.png",
+    amount: 3
   },
   {
-    sys: { id: 1 },
-
-    fields: {
-      title: "samsung s7 - white",
-      price: 20,
-      company: "samsung",
-      description:
-        "Shaman hexagon fam activated charcoal literally cardigan. Pitchfork YOLO man bun hella. Trust fund vexillologist squid put a bird on it man braid, selvage pug. Schlitz kombucha chillwave pug shabby chic cornhole. Try-hard four loko listicle yuccie kitsch small batch narwhal celiac selfies distillery cloud bread farm-to-table art party leggings glossier.",
-      featured: false,
-
-      image: { fields: { file: { url: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1574719863/iorxuhfensblqhn6jy5d.png" } } }
-    }
+    id: 2,
+    title: "compaq vintage computer",
+    price: 40.99,
+    image:
+        "https://res.cloudinary.com/diqqf3eq2/image/upload/v1574624417/vx64ovkpz9nu98tqdtzn.png",
+    amount: 2
   },
   {
-    sys: { id: 2 },
-
-    fields: {
-      title: "htc 10 - black",
-      price: 30,
-      company: "htc",
-      description:
-        "Shaman hexagon fam activated charcoal literally cardigan. Pitchfork YOLO man bun hella. Trust fund vexillologist squid put a bird on it man braid, selvage pug. Schlitz kombucha chillwave pug shabby chic cornhole. Try-hard four loko listicle yuccie kitsch small batch narwhal celiac selfies distillery cloud bread farm-to-table art party leggings glossier.",
-      featured: false,
-
-      image: { fields: { file: { url: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1574719863/iorxuhfensblqhn6jy5d.png" } } }
-    }
-  },
+    id: 3,
+    title: "commodore 64 vintage computer",
+    price: 129.99,
+    image:
+        "https://res.cloudinary.com/diqqf3eq2/image/upload/v1574720064/ousbxxs7ohhddd3wz18k.png",
+    amount: 1
+  }
 ];
