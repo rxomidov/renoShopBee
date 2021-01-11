@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {
     FaPhoneAlt, FaEnvelope, FaInstagram, FaTwitter, FaTelegram, FaFacebookF, FaLinkedin,
     FaCartPlus, FaSearch, FaAlignJustify,
-    FaHome, FaProductHunt
+    FaHome, FaMale, FaFemale, FaSnowflake, FaBaseballBall, FaShoppingBag
 } from "react-icons/all";
 import './Header.css';
 import styled from "styled-components";
@@ -94,20 +94,35 @@ export default function Header({isOpen, toggle}) {
                             </li>
                             <li>
                                 <Link to="/products" onClick={toggle}>
-                                    <FaProductHunt/>All Products
+                                    <FaShoppingBag/>All Products
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/men" onClick={toggle}>Men</Link>
+                                <Link to="/men" onClick={toggle}><FaMale/>Men</Link>
                             </li>
                             <li>
-                                <Link to="/women" onClick={toggle}>Women</Link>
+                                <Link to="/women" onClick={toggle}><FaFemale/>Women</Link>
                             </li>
                             <li>
-                                <Link to="/jewelery" onClick={toggle}>Jewelery</Link>
+                                <Link to="/jewelery" onClick={toggle}><FaSnowflake/>Jewelery</Link>
                             </li>
                             <li>
-                                <Link to="/accessories" onClick={toggle}>Accessories</Link>
+                                <Link to="/accessories" onClick={toggle}><FaBaseballBall/>Accessories</Link>
+                            </li>
+                            <li>
+                                <hr className="hr"/>
+                            </li>
+                            <li>
+                                <Link to="/" onClick={toggle}><FaPhoneAlt/>Contact Us</Link>
+                            </li>
+                            <li>
+                                <Link to="/" onClick={toggle}><FaEnvelope/>Send Message</Link>
+                            </li>
+                            <li>
+                                <hr className="hr"/>
+                            </li>
+                            <li>
+                                <Link to="/cart" onClick={toggle}><FaCartPlus/>Your Cart</Link>
                             </li>
                         </div>
                     </ul>
@@ -127,6 +142,10 @@ const SidebarWrapper = styled.div`
    height: 100%;
    background:rgba(0,0,0,0.5);
    transition: 0.3s;
+   .hr{
+    border-bottom: 2px solid #282c34;
+    width: 100%;
+   }
    .sidebar{
     position:absolute;
     width: 80%;
@@ -136,23 +155,26 @@ const SidebarWrapper = styled.div`
       div{
         li{
           display:flex;
-          justify-content:center;
+          //justify-content:center;
           a{
+            display:flex;
+            align-items: center;
             text-decoration:none;
             color:#fff;   
             padding: 0.5rem;
+            width: 100%;
             transition:0.3s;
             :hover{
-              color:#3cb878;
+              background:#333333;;
             }
             svg{
               color:#fff;
+              margin-right: 0.5rem;
             }
           }
         }
       }
     }
    }
-   
   }
 `

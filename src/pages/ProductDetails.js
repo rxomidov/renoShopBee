@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import {ProductContext} from "../context/product";
 import {CartContext} from "../context/cart";
@@ -41,6 +41,13 @@ export default function ProductDetails(props) {
     return (
         <ProductWrapper>
             <div className="container">
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                        <li className="breadcrumb-item"><Link to="/products">Products</Link></li>
+                        <li className="breadcrumb-item text-success" aria-current="page">Product</li>
+                    </ol>
+                </nav>
                 <div className="row">
                     <div className="col-md-5">
                         <div className="product-img">
@@ -224,6 +231,21 @@ const ProductWrapper = styled.section`
       display: flex;
       justify-content:center;
     }
+    .breadcrumb{
+    background: none;
+    margin-top: 0!important;
+    padding-top: 0!important;
+    font-size: 12px;
+    li{
+      a{
+        text-decoration:none;
+      }
+    }
+  }
+  .breadcrumb li+li:before {
+    content: ">";
+    font-weight:bold;
+  }
     
     @media screen and (max-width: 768px){
       .btn-back{

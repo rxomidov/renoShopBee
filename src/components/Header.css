@@ -141,6 +141,6 @@
         overflow-x: hidden;
     }
     .header-top-left div:nth-child(1){
-        display: block;
+        display: flex;
     }
 }

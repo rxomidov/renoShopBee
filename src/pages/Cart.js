@@ -20,7 +20,7 @@ export default function Cart(props) {
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                        <li className="breadcrumb-item"><Link to="/products">Library</Link></li>
+                        <li className="breadcrumb-item"><Link to="/products">Products</Link></li>
                         <li className="breadcrumb-item text-success" aria-current="page">Cart</li>
                     </ol>
                 </nav>

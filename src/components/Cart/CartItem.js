@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {MdRemoveShoppingCart} from "react-icons/all";
+import {FaTimesCircle} from "react-icons/all";
 import {CartContext} from "../../context/cart";
 
 export default function CartItem({id, title, price, image, amount}) {
@@ -59,7 +59,7 @@ export default function CartItem({id, title, price, image, amount}) {
                                         $ {amount * price}
                                         <button className="btn btn-outline-danger"
                                                 onClick={() => removeItem(id)}>
-                                            <MdRemoveShoppingCart/>
+                                            <FaTimesCircle/>
                                         </button>
                                     </div>
                                 </div>
