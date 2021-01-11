@@ -7,12 +7,14 @@ import Loading from "../components/Loading";
 import styled from "styled-components";
 import productRating from '../assets/productRating.png';
 import {FaCartPlus, FaChevronLeft, FaRegHeart, FaHeart, FaRecycle} from "react-icons/all";
+import ProductList from "../components/Products/ProductList";
+import ProductSlider from "../components/Products/ProductSlider";
 
 export default function ProductDetails(props) {
     const {id} = useParams();
     const history = useHistory();
     //console.log(id)
-    const {products} = useContext(ProductContext);
+    const {products, featured} = useContext(ProductContext);
     const {addToCart} = React.useContext(CartContext);
     const [quantity, setQuantity] = useState(1);
     const [liked, setLiked] = useState(false);
@@ -23,8 +25,9 @@ export default function ProductDetails(props) {
     if (!products) {
         return <Loading/>
     }
-    const {title, price, description} = product.fields;
-    const {url} = product.fields.image.fields.file;
+    const {fields} = product;
+    const {title, price, description} = fields;
+    const {url} = fields.image.fields.file;
 
     const minusQuantity = () => {
         if (quantity === 1) {
@@ -53,14 +56,15 @@ export default function ProductDetails(props) {
                         <div className="product-img">
                             <img src={url} alt="product image"/>
                         </div>
+                        <ProductSlider image={url}/>
                     </div>
                     <div className="col-md-7">
-                        <h3 className="product-title">
+                        <h3 className="product-title font-weight-bold">
                             {title}
                         </h3>
                         <div>
-                            <h4 className="product-price">
-                                {price}
+                            <h4 className="product-price text-success font-weight-bold">
+                                $ {price}
                             </h4>
                             <img src={productRating} alt=""/>
                         </div>
@@ -140,6 +144,11 @@ export default function ProductDetails(props) {
                     </div>
                 </div>
             </div>
+            <ProductList
+                title="related products"
+                parag="Newest trends from top brands"
+                products={featured}
+            />
         </ProductWrapper>
     );
 }
@@ -151,7 +160,9 @@ const ProductWrapper = styled.section`
   //button{
   //  outline: none!important;
   //}
-  
+  .product-title{
+    text-transform:capitalize;
+  }
   .product-details{
     display:flex;
     justify-content: space-between;

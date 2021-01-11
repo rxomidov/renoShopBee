@@ -12,13 +12,13 @@ export default function Product({fields, sys}) {
                     <div className="product-card-img">
                         <img className="" src={fields.image.fields.file.url} alt=""/>
                         <div className="img-after">
-                            <Link to={`products/${sys.id}`}>
+                            <Link to={`/products/${sys.id}`}>
                                 <FaCartPlus/>
                             </Link>
-                            <Link to={`products/${sys.id}`}>
+                            <Link to={`/products/${sys.id}`}>
                                 <FaHeart/>
                             </Link>
-                            <Link to={`products/${sys.id}`}>
+                            <Link to={`/products/${sys.id}`}>
                                 <FaRecycle/>
                             </Link>
                         </div>

@@ -8,16 +8,16 @@ export default function ProductList({title, parag, products}) {
     return (
         <FeaturedWrapper>
             <div className="container text-center">
-                <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                        <li className="breadcrumb-item text-success" aria-current="page">Products</li>
-                    </ol>
-                </nav>
+                {/*<nav aria-label="breadcrumb">*/}
+                {/*    <ol className="breadcrumb">*/}
+                {/*        <li className="breadcrumb-item"><Link to="/">Home</Link></li>*/}
+                {/*        <li className="breadcrumb-item text-success" aria-current="page">Products</li>*/}
+                {/*    </ol>*/}
+                {/*</nav>*/}
                 <h2 className="section-header">{title}</h2>
                 <p className="section-parag">{parag}</p>
                 <div className="row">
-                    {products.map(product=>(
+                    {products.map(product => (
                         <Product key={product.sys.id} {...product}/>
                     ))}
                 </div>
@@ -29,7 +29,7 @@ export default function ProductList({title, parag, products}) {
 const FeaturedWrapper = styled.section`
   padding-bottom: 4rem;
   .section-header{
-    margin-top: 1rem;
+    margin-top: 2rem;
     font-family: Poppins;
     font-weight:bold;
     text-transform:uppercase;

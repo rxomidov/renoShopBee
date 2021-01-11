@@ -15,7 +15,6 @@ export default function FeaturedProducts(props) {
             parag="Newest trends from top brands"
             products={featured}
         />
-
     );
 }
 
