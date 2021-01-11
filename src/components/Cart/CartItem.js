@@ -20,7 +20,7 @@ export default function CartItem({id, title, price, image, amount}) {
                                     </div>
                                 </div>
                                 <div className="col-md-8">
-                                    <div className="product-name font-weight-bold">
+                                    <div className="product-name">
                                         {title}
                                     </div>
                                 </div>
@@ -49,12 +49,12 @@ export default function CartItem({id, title, price, image, amount}) {
                                 </div>
                             </div>
                             <div className="col-md-3">
-                                <div className="product-name font-weight-bold text-success">
+                                <div className="product-name ext-success">
                                     $ {price}
                                 </div>
                             </div>
                             <div className="col-md-3">
-                                <div className="product-name pb2rem font-weight-bold text-primary">
+                                <div className="product-name pb2rem text-primary">
                                     <div>
                                         $ {amount * price}
                                         <button className="btn btn-outline-danger"
@@ -99,7 +99,8 @@ const CartItemWrapper = styled.div`
     //padding: 1rem;
     border-bottom: 1px solid lavender;
     //border-top: 1px solid lavender;
-    font-size: 16px;
+    font-size: 12px;
+    font-weight:bold;
   }
   .noboreder{
       border-right: none!important;

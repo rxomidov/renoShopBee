@@ -17,6 +17,13 @@ export default function Cart(props) {
     return (
         <CartWrapper>
             <div className="container text-center">
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                        <li className="breadcrumb-item"><Link to="/products">Library</Link></li>
+                        <li className="breadcrumb-item text-success" aria-current="page">Cart</li>
+                    </ol>
+                </nav>
                 <h1>Your Cart</h1>
                 <div className="cart-top">
                     <div className="row no-gutters">
@@ -61,16 +68,33 @@ export default function Cart(props) {
 }
 
 const CartWrapper = styled.section`
+  
   .cart-top{
     padding: 1rem;
     border-bottom: 1px solid lavender;
     border-top: 1px solid lavender;
-    font-size: 16px;
+    font-size: 12px;
+    font-weight:bold;
+  }
+  .breadcrumb{
+    background: none;
+    margin-top: 1rem;
+    font-size: 12px;
+    li{
+      a{
+        text-decoration:none;
+      }
+    }
+  }
+  .breadcrumb li+li:before {
+    content: ">";
+    font-weight:bold;
   }
   
   @media screen and (max-width: 768px){
     .cart-top{
       display:none;
+      
     }
   }
 `

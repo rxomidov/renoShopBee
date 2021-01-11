@@ -57,7 +57,11 @@
     justify-content: center;
 }
 .header-top-left div:first-child{
-    border-right: 1px solid #555555;
+    margin-left: -1rem;
+    display: none;
+}
+.header-top-left div:nth-child(2){
+    //border-right: 1px solid #555555;
     padding-left: 0;
 }
 .header-top-left div svg{
@@ -109,6 +113,9 @@
 .top-cart:hover{
     color: #3cb878;
 }
+.htpb{
+    border-right: 1px solid #555555;
+}
 
 
 @media screen and (max-width: 768px){
@@ -124,6 +131,7 @@
     .header-top-phone, .header-top-email{
         display: none!important;
     }
+
 }
 @media screen and (max-width: 992px){
     .header-middle-links{
@@ -131,5 +139,8 @@
     }
     .header{
         overflow-x: hidden;
+    }
+    .header-top-left div:nth-child(1){
+        display: block;
     }
 }

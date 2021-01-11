@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './App.css';
 import Header from "./components/Header";
@@ -11,8 +11,13 @@ import Cart from "./pages/Cart";
 import Error from "./pages/Error";
 
 export default function App() {
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () =>{
+        setIsOpen(!isOpen);
+    }
+
     return <Router>
-        <Header/>
+        <Header isOpen={isOpen} toggle={toggle}/>
         <Switch>
             <Route exact path="/">
                 <Home/>

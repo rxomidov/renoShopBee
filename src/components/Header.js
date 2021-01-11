@@ -3,11 +3,13 @@ import logo from '../assets/Renoshopbee.svg'
 import {Link} from "react-router-dom";
 import {
     FaPhoneAlt, FaEnvelope, FaInstagram, FaTwitter, FaTelegram, FaFacebookF, FaLinkedin,
-    FaCartPlus, FaSearch
+    FaCartPlus, FaSearch, FaAlignJustify,
+    FaHome, FaProductHunt
 } from "react-icons/all";
 import './Header.css';
+import styled from "styled-components";
 
-export default function Header(props) {
+export default function Header({isOpen, toggle}) {
     const [icons] = useState([
         {id: 1, icon: <FaInstagram/>, link: "https://instagram.com"},
         {id: 2, icon: <FaTwitter/>, link: "https://twitter.com"},
@@ -21,6 +23,9 @@ export default function Header(props) {
             <div className="header-top">
                 <div className="header-top-left">
                     <div>
+                        <FaAlignJustify onClick={toggle}/>
+                    </div>
+                    <div className="htpb">
                         <FaPhoneAlt/>
                         <div className="header-top-phone">
                             +998 99 992 28 17
@@ -80,6 +85,74 @@ export default function Header(props) {
                     </div>
                 </ul>
             </nav>
+            <SidebarWrapper isOpen={isOpen} onClick={toggle}>
+                <div className="sidebar">
+                    <ul>
+                        <div>
+                            <li>
+                                <Link to="/" onClick={toggle}><FaHome/>Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/products" onClick={toggle}>
+                                    <FaProductHunt/>All Products
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/men" onClick={toggle}>Men</Link>
+                            </li>
+                            <li>
+                                <Link to="/women" onClick={toggle}>Women</Link>
+                            </li>
+                            <li>
+                                <Link to="/jewelery" onClick={toggle}>Jewelery</Link>
+                            </li>
+                            <li>
+                                <Link to="/accessories" onClick={toggle}>Accessories</Link>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </SidebarWrapper>
         </header>
     );
 }
+
+const SidebarWrapper = styled.div`
+   position:fixed;
+   top: 0;
+   opacity: ${({isOpen}) => (isOpen ? '1' : '0')};
+   left: ${({isOpen}) => (isOpen ? '0' : '-100%')};
+   z-index: 99;
+   width: 100%;
+   height: 100%;
+   background:rgba(0,0,0,0.5);
+   transition: 0.3s;
+   .sidebar{
+    position:absolute;
+    width: 80%;
+    background:#000;
+    height: 100%;
+    ul{
+      div{
+        li{
+          display:flex;
+          justify-content:center;
+          a{
+            text-decoration:none;
+            color:#fff;   
+            padding: 0.5rem;
+            transition:0.3s;
+            :hover{
+              color:#3cb878;
+            }
+            svg{
+              color:#fff;
+            }
+          }
+        }
+      }
+    }
+   }
+   
+  }
+`
