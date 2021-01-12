@@ -30,6 +30,7 @@ export function CartProvider({children}) {
         setTotal(newTotal);
     }, [cart]);
 
+
     const removeItem = id =>{
         let newCart = [...cart].filter(item=>item.id !== id);
         setCart(newCart);
@@ -77,7 +78,7 @@ export function CartProvider({children}) {
     };
 
     return <CartContext.Provider value={{cart, total, cartItems,
-        addToCart, removeItem, increaseAmount, decreaseAmount, clearCart
+        addToCart, removeItem, increaseAmount, decreaseAmount, clearCart,
     }}>
         {children}
     </CartContext.Provider>

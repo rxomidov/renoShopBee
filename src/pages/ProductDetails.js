@@ -3,6 +3,7 @@ import {Link, useParams} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import {ProductContext} from "../context/product";
 import {CartContext} from "../context/cart";
+import {WishContext} from "../context/wish";
 import Loading from "../components/Loading";
 import styled from "styled-components";
 import productRating from '../assets/productRating.png';
@@ -16,10 +17,11 @@ export default function ProductDetails(props) {
     //console.log(id)
     const {products, featured} = useContext(ProductContext);
     const {addToCart} = React.useContext(CartContext);
+    const {addToWish} = React.useContext(WishContext);
     const [quantity, setQuantity] = useState(1);
     const [liked, setLiked] = useState(false);
 
-    const product = products.find(product => product.sys.id === id)
+    const product = products.find(product => product.sys.id === id);
     console.log(product);
 
     if (!products) {
@@ -124,9 +126,9 @@ export default function ProductDetails(props) {
                             <button
                                 className="btn btn-icon"
                                 onClick={() => {
-                                    handleLike()
-                                    //addToCart(product);
-                                    //history.push('/products')
+                                    handleLike();
+                                    addToWish(product);
+                                    history.push('/wishlist')
                                 }}
                             >
                                 {liked ? (<FaHeart/>) : <FaRegHeart/>}

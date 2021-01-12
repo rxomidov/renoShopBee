@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {
     FaPhoneAlt, FaEnvelope, FaInstagram, FaTwitter, FaTelegram, FaFacebookF, FaLinkedin,
     FaCartPlus, FaSearch, FaAlignJustify,
-    FaHome, FaMale, FaFemale, FaSnowflake, FaBaseballBall, FaShoppingBag
+    FaHome, FaMale, FaFemale, FaSnowflake, FaBaseballBall, FaShoppingBag, FaHeart
 } from "react-icons/all";
 import './Header.css';
 import styled from "styled-components";
@@ -124,6 +124,9 @@ export default function Header({isOpen, toggle}) {
                             <li>
                                 <Link to="/cart" onClick={toggle}><FaCartPlus/>Your Cart</Link>
                             </li>
+                            <li>
+                                <Link to="/wishlist" onClick={toggle}><FaHeart/>Your WishList</Link>
+                            </li>
                         </div>
                     </ul>
                 </div>
@@ -137,7 +140,7 @@ const SidebarWrapper = styled.div`
    top: 0;
    opacity: ${({isOpen}) => (isOpen ? '1' : '0')};
    left: ${({isOpen}) => (isOpen ? '0' : '-100%')};
-   z-index: 99;
+   z-index: 100;
    width: 100%;
    height: 100%;
    background:rgba(0,0,0,0.5);

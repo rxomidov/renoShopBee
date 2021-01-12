@@ -9,6 +9,7 @@ import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import Error from "./pages/Error";
+import WishList from "./pages/WishList";
 
 export default function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +31,9 @@ export default function App() {
             </Route>
             <Route path="/cart">
                 <Cart/>
+            </Route>
+            <Route path="/wishlist">
+                <WishList/>
             </Route>
             <Route path="*">
                 <Error/>
