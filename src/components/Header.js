@@ -8,6 +8,8 @@ import {
 } from "react-icons/all";
 import './Header.css';
 import styled from "styled-components";
+import {CartContext} from "../context/cart";
+import {WishContext} from "../context/wish";
 
 export default function Header({isOpen, toggle}) {
     const [icons] = useState([
@@ -17,6 +19,8 @@ export default function Header({isOpen, toggle}) {
         {id: 4, icon: <FaFacebookF/>, link: "https://facebook.com"},
         {id: 5, icon: <FaLinkedin/>, link: "https://linkedin.com"},
     ]);
+    const {cartItems} = React.useContext(CartContext);
+    const {wishItems} = React.useContext(WishContext);
 
     return (
         <header className="header">
@@ -80,10 +84,20 @@ export default function Header({isOpen, toggle}) {
                             </div>
                         </li>
                         <li>
-                            <Link className="top-cart" to="/wishlist"><FaHeart/></Link>
+                            <Link className="top-cart" to="/wishlist">
+                                <FaHeart/>
+                                {wishItems > 0 && (
+                                    <span className="cart-link-total">{wishItems}</span>
+                                )}
+                            </Link>
                         </li>
                         <li>
-                            <Link className="top-cart" to="/cart"><FaCartPlus/></Link>
+                            <Link className="top-cart" to="/cart">
+                                <FaCartPlus/>
+                                {cartItems > 0 && (
+                                    <span className="cart-link-total">{cartItems}</span>
+                                )}
+                            </Link>
                         </li>
                     </div>
                 </ul>

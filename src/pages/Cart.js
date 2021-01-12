@@ -11,7 +11,18 @@ export default function Cart(props) {
 
     if (cart.length === 0){
         return (
-            <h1>empty card</h1>
+            <CartWrapper>
+                <div className="container text-center">
+                    <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                            <li className="breadcrumb-item"><Link to="/products">Products</Link></li>
+                            <li className="breadcrumb-item text-success" aria-current="page">Cart</li>
+                        </ol>
+                    </nav>
+                    <h2 className="section-header">empty cart</h2>
+                </div>
+            </CartWrapper>
         )
     }
     return (
@@ -69,9 +80,10 @@ export default function Cart(props) {
 
 const CartWrapper = styled.section`
   .section-header{
+    text-transform:capitalize;
     font-size: 2rem;
     font-family: Poppins;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   .cart-top{
     padding: 1rem;

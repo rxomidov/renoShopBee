@@ -39,7 +39,7 @@ export default function CartItem({id, title, price, image, amount}) {
                                 <div className="product-name">
                                     <div className="product-quantity">
                                         <button className="btn btn-minus"
-                                                onClick={() => decreaseAmount(id)}>-
+                                                onClick={() => decreaseAmount(id, amount)}>-
                                         </button>
                                         <div className="quantity">{amount}</div>
                                         <button className="btn btn-plus"
@@ -124,7 +124,7 @@ const CartItemWrapper = styled.div`
       }
       img{
         padding: 1rem;
-      }
+      }                                                                                                                                                                                                                                                                                     
       div{
         width: 100%;
         padding: 0 2rem;

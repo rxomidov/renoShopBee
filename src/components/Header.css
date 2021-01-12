@@ -109,6 +109,21 @@
     color: #000;
     margin-left: 0.5rem!important;
     transition: 0.3s;
+    position: relative;
+}
+.top-cart span{
+    position: absolute;
+    font-size: 9px;
+    top: 0;
+    right: -4px;
+    width: 12px;
+    height: 12px;
+    color: #fff;
+    background: #3cb878;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .top-cart:hover{
     color: #3cb878;

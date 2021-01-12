@@ -11,13 +11,18 @@ export const WishContext = createContext();
 export function WishProvider({children}) {
     const [wish, setWish] = useState(getWishFromLocalStorage);
     const [total, setTotal] = React.useState(0);
-    const [cartItems, setCartItems] = React.useState(0);
+    const [wishItems, setWishItems] = React.useState(0);
 
 
     React.useEffect(() => {
         // local storage
         localStorage.setItem("wish", JSON.stringify(wish));
         // wish items
+        let newCartItems = wish.reduce((total, wishItem) => {
+            //.log(total,cartItem);
+            return (total += wishItem.amount);
+        }, 0);
+        setWishItems(newCartItems);
     }, [wish]);
 
     const removeWish = id => {
@@ -48,7 +53,7 @@ export function WishProvider({children}) {
     };
 
     return <WishContext.Provider value={{
-        wish, total, cartItems,
+        wish, total, wishItems,
         removeWish, clearWish, addToWish
     }}>
         {children}
