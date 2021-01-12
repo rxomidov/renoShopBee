@@ -21,7 +21,7 @@ export default function WishList(props) {
                             <li className="breadcrumb-item text-success" aria-current="page">WishList</li>
                         </ol>
                     </nav>
-                    <h1>empty wishList</h1>
+                    <h2 className="section-header">empty wishList</h2>
                 </div>
             </CartWrapper>
         )
@@ -36,7 +36,7 @@ export default function WishList(props) {
                         <li className="breadcrumb-item text-success" aria-current="page">WishList</li>
                     </ol>
                 </nav>
-                <h1>Your WishList</h1>
+                <h2 className="section-header">Your WishList</h2>
                 <div className="cart-top">
                     <div className="row no-gutters">
                         <div className="col-md-4">
@@ -68,7 +68,12 @@ export default function WishList(props) {
 }
 
 const CartWrapper = styled.section`
-  
+  padding: 0 0 2rem;
+  .section-header{
+    font-family: Poppins;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
   .cart-top{
     padding: 1rem;
     border-bottom: 1px solid lavender;

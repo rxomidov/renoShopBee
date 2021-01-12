@@ -40,8 +40,7 @@ export function WishProvider({children}) {
             const newCart=[...wish,newItem];
             setWish(newCart);
         }
-        removeWish(id)
-
+        //removeWish(id)
     };
 
     const clearWish = () => {

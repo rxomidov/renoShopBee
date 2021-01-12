@@ -57,7 +57,7 @@ export default function CartItem({id, title, price, image, amount}) {
                                 <div className="product-name pb2rem text-primary">
                                     <div>
                                         $ {amount * price}
-                                        <button className="btn btn-outline-danger"
+                                        <button className="btn btn-remove"
                                                 onClick={() => removeItem(id)}>
                                             <FaTimesCircle/>
                                         </button>
@@ -113,7 +113,15 @@ const CartItemWrapper = styled.div`
       justify-content:center;
       text-transform:capitalize;
       border-right: 1px solid lavender;
-      
+      .btn-remove{
+        border-radius: 0;
+        outline: none;
+        color:#000;
+        transition: 0.3s;
+        :hover{
+          color: red;
+        }
+      }
       img{
         padding: 1rem;
       }

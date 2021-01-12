@@ -74,7 +74,6 @@ export default function WishItem({id, title, price, image}) {
 }
 
 const CartItemWrapper = styled.div`
-   
    .product-quantity{
     height: 3rem;
     padding: 0 0.5rem!important;
@@ -117,12 +116,13 @@ const CartItemWrapper = styled.div`
       font-family: Poppins;
       .btn-add{
         border-radius: 0;
-        background:#3cb878;
+        background:#fff;
         outline: none;
-        color:#fff;
+        color:#000;
         transition: 0.3s;
         :hover{
-          filter: brightness(0.8);
+          background:#3cb878;
+          color: #fff;
         }
       }
       .btn-remove{

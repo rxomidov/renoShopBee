@@ -80,6 +80,9 @@ export default function Header({isOpen, toggle}) {
                             </div>
                         </li>
                         <li>
+                            <Link className="top-cart" to="/wishlist"><FaHeart/></Link>
+                        </li>
+                        <li>
                             <Link className="top-cart" to="/cart"><FaCartPlus/></Link>
                         </li>
                     </div>

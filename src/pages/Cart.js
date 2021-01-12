@@ -24,7 +24,7 @@ export default function Cart(props) {
                         <li className="breadcrumb-item text-success" aria-current="page">Cart</li>
                     </ol>
                 </nav>
-                <h1>Your Cart</h1>
+                <h2 className="section-header">Your Cart</h2>
                 <div className="cart-top">
                     <div className="row no-gutters">
                         <div className="col-md-4">
@@ -68,7 +68,11 @@ export default function Cart(props) {
 }
 
 const CartWrapper = styled.section`
-  
+  .section-header{
+    font-size: 2rem;
+    font-family: Poppins;
+    margin-bottom: 1rem;
+  }
   .cart-top{
     padding: 1rem;
     border-bottom: 1px solid lavender;
