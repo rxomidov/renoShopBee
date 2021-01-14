@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import {ProductContext} from "../context/product";
@@ -24,6 +24,14 @@ export default function ProductDetails(props) {
     const product = products.find(product => product.sys.id === id);
     console.log(product);
 
+    function ScrollToTopOnMount() {
+        useEffect(() => {
+            window.scrollTo(0, 0);
+        }, []);
+
+        return null;
+    }
+
     if (!products) {
         return <Loading/>
     }
@@ -46,6 +54,7 @@ export default function ProductDetails(props) {
     return (
         <ProductWrapper>
             <div className="container">
+                <ScrollToTopOnMount/>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><Link to="/">Home</Link></li>

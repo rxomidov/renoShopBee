@@ -27,6 +27,7 @@ export default function ProductList({title, parag, products}) {
 }
 
 const FeaturedWrapper = styled.section`
+  padding-top: 2rem;
   padding-bottom: 4rem;
   .section-header{
     margin-top: 2rem;

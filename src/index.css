@@ -7,6 +7,7 @@
 }
 body {
   margin: 0;
+  scroll-behavior: smooth;
   //overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Poppins', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
