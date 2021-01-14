@@ -10,6 +10,7 @@ import productRating from '../assets/productRating.png';
 import {FaCartPlus, FaChevronLeft, FaRegHeart, FaHeart, FaRecycle} from "react-icons/all";
 import ProductList from "../components/Products/ProductList";
 import ProductSlider from "../components/Products/ProductSlider";
+import ScrolloTop from "../utils/ScrolloTop";
 
 export default function ProductDetails(props) {
     const {id} = useParams();
@@ -23,14 +24,6 @@ export default function ProductDetails(props) {
 
     const product = products.find(product => product.sys.id === id);
     console.log(product);
-
-    function ScrollToTopOnMount() {
-        useEffect(() => {
-            window.scrollTo(0, 0);
-        }, []);
-
-        return null;
-    }
 
     if (!products) {
         return <Loading/>
@@ -54,7 +47,7 @@ export default function ProductDetails(props) {
     return (
         <ProductWrapper>
             <div className="container">
-                <ScrollToTopOnMount/>
+                <ScrolloTop/>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><Link to="/">Home</Link></li>
