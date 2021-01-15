@@ -19,7 +19,7 @@ function SamplePrevArrow(props) {
     );
 }
 
-export default function ProductSlider({image}) {
+export default function ProductSlider({image,image1,image2,image3}) {
     const settings = {
         dots: false,
         infinite: true,
@@ -40,13 +40,13 @@ export default function ProductSlider({image}) {
                     <img src={image} alt="image"/>
                 </div>
                 <div className="slider-item">
-                    <img src={image} alt="image"/>
+                    <img src={image1} alt="image"/>
                 </div>
                 <div className="slider-item">
-                    <img src={image} alt="image"/>
+                    <img src={image2} alt="image"/>
                 </div>
                 <div className="slider-item">
-                    <img src={image} alt="image"/>
+                    <img src={image3} alt="image"/>
                 </div>
             </Slider>
         </SliderWrapper>
@@ -61,6 +61,8 @@ const SliderWrapper = styled.div`
     color:#fff;
     img{
       width: 100px;
+      height: 100px;
+      object-fit: cover;
       margin: 0 auto;
     }
   }

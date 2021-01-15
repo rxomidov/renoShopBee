@@ -1,6 +1,6 @@
 import React, {createContext, useState, useEffect} from "react";
 import {client} from "./contentful";
-import {feturedProducts} from "../utils/helpers";
+import {categoryDesktop, featuredProducts} from "../utils/helpers";
 
 export const ProductContext = createContext();
 
@@ -8,6 +8,7 @@ export default function ProductProvider({children}) {
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const [featured, setFeatured] = useState([]);
+    const [desktop, setDesktop] = useState([]);
 
     useEffect(()=>{
         setLoading(true);
@@ -16,8 +17,11 @@ export default function ProductProvider({children}) {
         })
             .then(response => {
                 setProducts(response.items);
-                const featured = feturedProducts(response.items)
+                const featured = featuredProducts(response.items);
+                const desktop = categoryDesktop(response.items);
+
                 setFeatured(featured);
+                setDesktop(desktop);
                 setLoading(false);
             })
             .catch(console.error)
@@ -25,7 +29,9 @@ export default function ProductProvider({children}) {
     },[]);
 
     return (
-        <ProductContext.Provider value={{loading, products, featured}}>
+        <ProductContext.Provider value={{loading, products, featured,
+        desktop
+        }}>
             {children}
         </ProductContext.Provider>
     )
