@@ -2,13 +2,19 @@ import React from 'react';
 import styled from "styled-components";
 import Product from "./Product";
 import {Link} from "react-router-dom";
-import ScrolloTop from "../../utils/ScrolloTop";
 
 export default function ProductList({title, parag, products}) {
     console.log(products);
+    function ScrollToTopOnMount() {
+        React.useEffect(() => {
+            window.scrollTo(0, 0);
+        }, []);
+
+        return null;
+    }
     return (
         <FeaturedWrapper>
-            <ScrolloTop/>
+            <ScrollToTopOnMount/>
             <div className="container text-center">
                 {/*<nav aria-label="breadcrumb">*/}
                 {/*    <ol className="breadcrumb">*/}

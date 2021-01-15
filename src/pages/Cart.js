@@ -154,6 +154,7 @@ export default function Cart(props) {
                                         <div>$ {(total * 0.9).toFixed(2)}</div>
                                     </div>
                                 </div>
+                                <Link to="/checkout" className="btn btn-back">Proceed to checkout</Link>
                             </div>
                         </div>
                     </div>

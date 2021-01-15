@@ -10,7 +10,7 @@ import productRating from '../assets/productRating.png';
 import {FaCartPlus, FaChevronLeft, FaRegHeart, FaHeart, FaRecycle} from "react-icons/all";
 import ProductList from "../components/Products/ProductList";
 import ProductSlider from "../components/Products/ProductSlider";
-import ScrolloTop from "../utils/ScrolloTop";
+import ScrollToTop from "../utils/ScrolloTop";
 
 export default function ProductDetails(props) {
     const {id} = useParams();
@@ -47,7 +47,7 @@ export default function ProductDetails(props) {
     return (
         <ProductWrapper>
             <div className="container">
-                <ScrolloTop/>
+                <ScrollToTop/>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><Link to="/">Home</Link></li>

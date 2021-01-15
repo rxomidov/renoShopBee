@@ -3,12 +3,18 @@ import styled from "styled-components";
 import {FaCartPlus, FaHeart, FaRecycle} from "react-icons/all";
 import productRating from '../../assets/productRating.png'
 import {Link} from "react-router-dom";
+import aos from 'aos';
+import 'aos/dist/aos.css'
 
 export default function Product({fields, sys}) {
+    React.useEffect(() => {
+        aos.init({duration: 1000});
+    }, []);
+
     return (
         <div className="col-lg-3 col-md-4 col-sm-6">
             <ProductWrapper>
-                <div className="product-card">
+                <div className="product-card" data-aos="fade-up">
                     <div className="product-card-img">
                         <img className="" src={fields.image.fields.file.url} alt=""/>
                         <div className="img-after">
