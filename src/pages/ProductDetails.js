@@ -35,7 +35,7 @@ export default function ProductDetails(props) {
     const url2 = image2.fields.file.url;
     const url3 = image3.fields.file.url;
 
-    console.log(url1, url);
+    //console.log(url1, url);
 
     const minusQuantity = () => {
         if (quantity === 1) {
