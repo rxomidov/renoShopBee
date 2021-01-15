@@ -5,8 +5,14 @@ export function featuredProducts(items) {
     })
 }
 
-export function categoryDesktop(data) {
-    return data.filter(item=>{
+export function categoryDesktop(items) {
+    return items.filter(item=>{
         return item.fields.category==='desktop';
+    })
+}
+
+export function categoryLaptop(items) {
+    return items.filter(item=>{
+        return item.fields.category==='laptop';
     })
 }

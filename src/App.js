@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import Error from "./pages/Error";
 import WishList from "./pages/WishList";
 import Desktop from "./components/Products/Desktop";
+import Laptop from "./components/Products/Laptop";
 
 export default function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,9 @@ export default function App() {
             </Route>
             <Route  path="/desktop">
                 <Desktop/>
+            </Route>
+            <Route  path="/laptop">
+                <Laptop/>
             </Route>
             <Route path="/cart">
                 <Cart/>

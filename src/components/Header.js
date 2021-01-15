@@ -65,7 +65,7 @@ export default function Header({isOpen, toggle}) {
                             <Link to="/men">Men</Link>
                         </li>
                         <li>
-                            <Link to="/women">Women</Link>
+                            <Link to="/laptop">Laptop</Link>
                         </li>
                         <li>
                             <Link to="/desktop">Desktop</Link>
