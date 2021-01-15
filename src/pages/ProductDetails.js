@@ -24,7 +24,7 @@ export default function ProductDetails(props) {
 
     const product = products.find(product => product.sys.id === id);
     console.log(product);
-
+    //const [slide, setSlide] = React.useState([]);
     if (!products) {
         return <Loading/>
     }
@@ -34,8 +34,9 @@ export default function ProductDetails(props) {
     const url1 = image1.fields.file.url;
     const url2 = image2.fields.file.url;
     const url3 = image3.fields.file.url;
+    //setSlide([...slide,url1]);
 
-    //console.log(url1, url);
+    //console.log(slide);
 
     const minusQuantity = () => {
         if (quantity === 1) {

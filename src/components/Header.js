@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {
     FaPhoneAlt, FaEnvelope, FaInstagram, FaTwitter, FaTelegram, FaFacebookF, FaLinkedin,
     FaCartPlus, FaSearch, FaAlignJustify,
-    FaHome, FaMale, FaFemale, FaSnowflake, FaBaseballBall, FaShoppingBag, FaHeart
+    FaHome, FaProductHunt, FaLaptop, FaDesktop, FaPhone, FaBaseballBall, FaShoppingBag, FaHeart
 } from "react-icons/all";
 import './Header.css';
 import styled from "styled-components";
@@ -62,13 +62,16 @@ export default function Header({isOpen, toggle}) {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link to="/men">Men</Link>
+                            <Link to="/products">All</Link>
                         </li>
                         <li>
                             <Link to="/laptop">Laptop</Link>
                         </li>
                         <li>
                             <Link to="/desktop">Desktop</Link>
+                        </li>
+                        <li>
+                            <Link to="/phone">Phone</Link>
                         </li>
                         <li>
                             <Link to="/accessories">Accessories</Link>
@@ -115,13 +118,13 @@ export default function Header({isOpen, toggle}) {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/men" onClick={toggle}><FaMale/>Men</Link>
+                                <Link to="/laptop" onClick={toggle}><FaLaptop/>Laptop</Link>
                             </li>
                             <li>
-                                <Link to="/women" onClick={toggle}><FaFemale/>Women</Link>
+                                <Link to="/desktop" onClick={toggle}><FaDesktop/>Desktop</Link>
                             </li>
                             <li>
-                                <Link to="/jewelery" onClick={toggle}><FaSnowflake/>Jewelery</Link>
+                                <Link to="/phone" onClick={toggle}><FaPhone/>Phone</Link>
                             </li>
                             <li>
                                 <Link to="/accessories" onClick={toggle}><FaBaseballBall/>Accessories</Link>

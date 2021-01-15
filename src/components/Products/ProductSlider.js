@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,20 +6,20 @@ import styled from "styled-components";
 import {FaChevronLeft, FaChevronRight} from "react-icons/all";
 
 function SampleNextArrow(props) {
-    const { onClick } = props;
+    const {onClick} = props;
     return (
         <button className="next" onClick={onClick}><FaChevronRight/></button>
     );
 }
 
 function SamplePrevArrow(props) {
-    const { onClick } = props;
+    const {onClick} = props;
     return (
         <button className="prev" onClick={onClick}><FaChevronLeft/></button>
     );
 }
 
-export default function ProductSlider({image,image1,image2,image3}) {
+export default function ProductSlider({image, image1, image2, image3}) {
     const settings = {
         dots: false,
         infinite: true,
@@ -29,8 +29,17 @@ export default function ProductSlider({image,image1,image2,image3}) {
         speed: 500,
         autoplaySpeed: 4000,
         cssEase: "linear",
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        nextArrow: <SampleNextArrow/>,
+        prevArrow: <SamplePrevArrow/>,
+        responsive: [
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     };
 
     return (
@@ -89,4 +98,16 @@ const SliderWrapper = styled.div`
     top: 50%;
     transform: translateY(-50%);
   }
+  
+  @media screen and (max-width: 768px){
+    .slider-item{
+    //background:#000;
+    
+    img{
+      width: 100px;
+      height: 100px;
+      
+    }
+  }
+}
 `
