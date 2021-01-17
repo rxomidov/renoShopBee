@@ -23,6 +23,12 @@ export function categoryPhone(items) {
     })
 }
 
+export function categoryAccessories(items) {
+    return items.filter(item => {
+        return item.fields.category === 'accessories';
+    })
+}
+
 export function paginate(products) {
     const itemsPerPage = 4;
     const numberOfPages = Math.ceil(products.length / itemsPerPage);

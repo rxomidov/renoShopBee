@@ -1,6 +1,7 @@
 import React, {createContext, useState, useEffect} from "react";
 import {client} from "./contentful";
-import {categoryDesktop, categoryLaptop, categoryPhone,
+import {
+    categoryAccessories, categoryDesktop, categoryLaptop, categoryPhone,
     featuredProducts, paginate
 } from "../utils/helpers";
 
@@ -13,6 +14,7 @@ export default function ProductProvider({children}) {
     const [desktop, setDesktop] = useState([]);
     const [laptop, setLaptop] = useState([]);
     const [phone, setPhone] = useState([]);
+    const [accessories, setAccessories] = useState([]);
     const [page, setPage] = useState(0);
 
     useEffect(()=>{
@@ -27,11 +29,13 @@ export default function ProductProvider({children}) {
                 const desktop = categoryDesktop(response.items);
                 const laptop = categoryLaptop(response.items);
                 const phone = categoryPhone(response.items);
+                const accessories = categoryAccessories(response.items);
 
                 setFeatured(featured);
                 setDesktop(desktop);
                 setLaptop(laptop);
                 setPhone(phone);
+                setAccessories(accessories);
                 setLoading(false);
             })
             .catch(console.error)
@@ -45,7 +49,7 @@ export default function ProductProvider({children}) {
 
     return (
         <ProductContext.Provider value={{loading, products, featured,
-        desktop, laptop, phone, page, changePage
+        desktop, laptop, phone, accessories, page, changePage
         }}>
             {children}
         </ProductContext.Provider>
