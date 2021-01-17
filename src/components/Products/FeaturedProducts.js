@@ -14,6 +14,7 @@ export default function FeaturedProducts(props) {
             title="featured products"
             parag="Newest trends from top brands"
             products={featured}
+            featured = {true}
         />
     );
 }

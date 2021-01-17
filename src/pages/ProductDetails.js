@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import {ProductContext} from "../context/product";
@@ -16,13 +16,13 @@ export default function ProductDetails(props) {
     const {id} = useParams();
     const history = useHistory();
     //console.log(id)
-    const {products, featured} = useContext(ProductContext);
+    const {products, featured, page} = useContext(ProductContext);
     const {addToCart} = React.useContext(CartContext);
     const {addToWish} = React.useContext(WishContext);
     const [quantity, setQuantity] = useState(1);
     const [liked, setLiked] = useState(false);
 
-    const product = products.find(product => product.sys.id === id);
+    const product = products[page].find(product => product.sys.id === id);
     console.log(product);
     //const [slide, setSlide] = React.useState([]);
     if (!products) {
@@ -64,7 +64,7 @@ export default function ProductDetails(props) {
                 <div className="row">
                     <div className="col-md-5">
                         <div className="product-img">
-                            <img src={url} alt="product image"/>
+                            <img src={url} alt=""/>
                         </div>
                         <ProductSlider image={url} image1={url1}
                                        image2={url2} image3={url3}/>
@@ -159,6 +159,7 @@ export default function ProductDetails(props) {
                 title="related products"
                 parag="Newest trends from top brands"
                 products={featured}
+                featured = {true}
             />
         </ProductWrapper>
     );

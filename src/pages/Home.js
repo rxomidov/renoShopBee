@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {sliderData} from "../data/SliderData";
 import FeaturedProducts from "../components/Products/FeaturedProducts";
 import SubscribeClients from "../components/SubscribeClients";
+import Check from "../components/Products/Check";
 
 export default function Home(props) {
     return (
@@ -13,6 +14,7 @@ export default function Home(props) {
             </Hero>
             <FeaturedProducts/>
             <SubscribeClients/>
+            {/*<Check/>*/}
         </>
     );
 }

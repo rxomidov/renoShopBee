@@ -3,8 +3,9 @@ import styled from "styled-components";
 import Product from "./Product";
 import {Link} from "react-router-dom";
 
-export default function ProductList({title, parag, products}) {
+export default function ProductList({title, parag, products, featured, desktop}) {
     console.log(products);
+
     function ScrollToTopOnMount() {
         React.useEffect(() => {
             window.scrollTo(0, 0);
@@ -12,16 +13,19 @@ export default function ProductList({title, parag, products}) {
 
         return null;
     }
+
     return (
         <FeaturedWrapper>
             <ScrollToTopOnMount/>
             <div className="container text-center">
-                {/*<nav aria-label="breadcrumb">*/}
-                {/*    <ol className="breadcrumb">*/}
-                {/*        <li className="breadcrumb-item"><Link to="/">Home</Link></li>*/}
-                {/*        <li className="breadcrumb-item text-success" aria-current="page">Products</li>*/}
-                {/*    </ol>*/}
-                {/*</nav>*/}
+                {featured ? ("") : (
+                    <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                            <li className="breadcrumb-item text-success" aria-current="page">Products</li>
+                        </ol>
+                    </nav>
+                )}
                 <h2 className="section-header">{title}</h2>
                 <p className="section-parag">{parag}</p>
                 <div className="row">

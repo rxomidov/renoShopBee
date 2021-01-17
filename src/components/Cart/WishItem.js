@@ -11,9 +11,9 @@ export default function WishItem({id, title, price, image}) {
 
     const {removeWish} = useContext(WishContext);
     const {addToCart} = useContext(CartContext);
-    const {products} = useContext(ProductContext);
+    const {products, page} = useContext(ProductContext);
 
-    const product = products.find(product => product.sys.id === id);
+    const product = products[page].find(product => product.sys.id === id);
 
     return (
         <CartItemWrapper>

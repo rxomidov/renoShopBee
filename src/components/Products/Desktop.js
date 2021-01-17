@@ -4,8 +4,8 @@ import Loading from "../Loading";
 import ProductList from "./ProductList";
 
 export default function Desktop(props) {
-    const {loading,desktop} = React.useContext(ProductContext);
-    if (loading){
+    const {loading, desktop} = React.useContext(ProductContext);
+    if (loading) {
         return <Loading/>
     }
     return (
@@ -13,6 +13,7 @@ export default function Desktop(props) {
             title="Desktop Computers"
             parag="Newest trends from top brands"
             products={desktop}
+            desktop={true}
         />
 
     );

@@ -13,6 +13,7 @@ export default function Laptop(props) {
             title="Laptop Computers"
             parag="Newest trends from top brands"
             products={laptop}
+            laptop={true}
         />
 
     );

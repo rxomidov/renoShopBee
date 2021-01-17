@@ -1,7 +1,7 @@
 import React from 'react';
 import {ProductContext} from "../context/product";
 import Loading from "../components/Loading";
-import ProductList from "../components/Products/ProductList";
+import PageProducts from "../components/PageProducts";
 
 export default function Products(props) {
     const {loading,products} = React.useContext(ProductContext);
@@ -9,11 +9,6 @@ export default function Products(props) {
         return <Loading/>
     }
     return (
-        <ProductList
-            title="our products"
-            parag="Newest trends from top brands"
-            products={products}
-        />
-
+        <PageProducts/>
     );
 }

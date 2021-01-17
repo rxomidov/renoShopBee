@@ -1,6 +1,8 @@
 import React, {createContext, useState, useEffect} from "react";
 import {client} from "./contentful";
-import {categoryDesktop, categoryLaptop, categoryPhone, featuredProducts} from "../utils/helpers";
+import {categoryDesktop, categoryLaptop, categoryPhone,
+    featuredProducts, paginate
+} from "../utils/helpers";
 
 export const ProductContext = createContext();
 
@@ -11,6 +13,7 @@ export default function ProductProvider({children}) {
     const [desktop, setDesktop] = useState([]);
     const [laptop, setLaptop] = useState([]);
     const [phone, setPhone] = useState([]);
+    const [page, setPage] = useState(0);
 
     useEffect(()=>{
         setLoading(true);
@@ -18,7 +21,8 @@ export default function ProductProvider({children}) {
             content_type: 'techStoreProductExample'
         })
             .then(response => {
-                setProducts(response.items);
+                const products = response.items;
+                setProducts(paginate(products));
                 const featured = featuredProducts(response.items);
                 const desktop = categoryDesktop(response.items);
                 const laptop = categoryLaptop(response.items);
@@ -34,9 +38,14 @@ export default function ProductProvider({children}) {
 
     },[]);
 
+    const changePage = (index) => {
+        setPage(index);
+    };
+
+
     return (
         <ProductContext.Provider value={{loading, products, featured,
-        desktop, laptop, phone
+        desktop, laptop, phone, page, changePage
         }}>
             {children}
         </ProductContext.Provider>
