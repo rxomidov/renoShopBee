@@ -4,7 +4,7 @@ import {FaCartPlus, FaHeart, FaRecycle} from "react-icons/all";
 import productRating from '../../assets/productRating.png'
 import {Link} from "react-router-dom";
 import aos from 'aos';
-import 'aos/dist/aos.css'
+import 'aos/dist/aos.css';
 
 export default function Product({fields, sys}) {
     React.useEffect(() => {
@@ -30,7 +30,7 @@ export default function Product({fields, sys}) {
                         </div>
                     </div>
                     <div className="product-info">
-                        <div className="product-name">{fields.title}</div>
+                        <div className="product-name"> {fields.title}</div>
                         <div className="product-price">$ {fields.price}</div>
                         <img src={productRating} alt="product rating"/>
                     </div>
